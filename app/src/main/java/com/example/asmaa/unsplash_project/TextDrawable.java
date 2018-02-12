@@ -1,0 +1,73 @@
+package com.example.asmaa.unsplash_project;
+
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PixelFormat;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+
+public class TextDrawable extends Drawable {
+
+    private final String text;
+    private final Paint paint;
+
+    public TextDrawable(String text) {
+
+        this.text = text;
+
+        this.paint = new Paint();
+        paint.setColor(Color.WHITE);
+        paint.setTextSize(27f);
+        paint.setAntiAlias(true);
+        paint.setFakeBoldText(true);
+        paint.setShadowLayer(12f, 0, 0, Color.BLACK);
+        paint.setStyle(Paint.Style.FILL);
+        paint.setTextAlign(Paint.Align.CENTER);
+    }
+
+    @Override
+    public void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+
+       if (text.equals("1")){
+            canvas.drawText("Buildings", bounds.centerX() - 15f /*just a lazy attempt to centre the text*/ * text.length(), bounds.centerY() + 15f, paint);
+
+        }else if (text.equals("2")){
+            canvas.drawText(" Food & Drink", bounds.centerX() - 15f /*just a lazy attempt to centre the text*/ * text.length(), bounds.centerY() + 15f, paint);
+
+        }else if (text.equals("3")){
+            canvas.drawText("Nature", bounds.centerX() - 15f /*just a lazy attempt to centre the text*/ * text.length(), bounds.centerY() + 15f, paint);
+
+        }else if (text.equals("4")){
+            canvas.drawText("Objects", bounds.centerX() - 15f /*just a lazy attempt to centre the text*/ * text.length(), bounds.centerY() + 15f, paint);
+
+        }else if (text.equals("5")){
+            canvas.drawText("People", bounds.centerX() - 15f /*just a lazy attempt to centre the text*/ * text.length(), bounds.centerY() + 15f, paint);
+
+        }else if (text.equals("0")){
+            canvas.drawText(" Technology", bounds.centerX() - 15f /*just a lazy attempt to centre the text*/ * text.length(), bounds.centerY() + 15f, paint);
+
+        }
+       // }
+    }
+    @Override
+    public void setAlpha(int alpha) {
+        paint.setAlpha(alpha);
+    }
+
+    @Override
+    public void setColorFilter(ColorFilter cf) {
+        paint.setColorFilter(cf);
+    }
+
+    @Override
+    public int getOpacity() {
+        return PixelFormat.TRANSLUCENT;
+    }
+
+    public String getText() {
+        return text;
+    }
+}

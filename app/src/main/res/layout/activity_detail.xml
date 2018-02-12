@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.asmaa.unsplash_project.detailActivity">
+    android:background="#faf6f3">
 
-</android.support.constraint.ConstraintLayout>
+    <com.lukedeighton.wheelview.WheelView
+        android:id="@+id/wheelview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:emptyItemColor="@color/green_900"
+        app:rotatableWheelDrawable="false"
+        app:selectionAngle="90.0"
+        app:wheelPosition="left"
+        app:wheelOffsetY="30dp"
+        app:selectionColor="@color/teal_900"
+        app:selectionPadding="4dp"
+        app:repeatItems="true"
+        app:wheelRadius="276dp"
+        app:wheelItemCount="14"
+        app:wheelPadding="5dp"
+        app:wheelItemRadius="43dp"/>
+
+    <!--
+            app:wheelPosition="bottom"
+                    app:wheelOffsetY="60dp"
+        app:wheelItemTransformer="com.lukedeighton.wheelview.transformer.SimpleItemTransformer"
+    -->
+</RelativeLayout>
